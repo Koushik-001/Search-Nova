@@ -1,0 +1,21 @@
+# Ignore Python virtual environment
+venv/
+
+# Byte-compiled / cache files
+__pycache__/
+*.py[cod]
+
+# Node.js dependencies
+**/node_modules/
+
+# Build directories
+**/dist/
+**/build/
+
+# OS files
+.DS_Store
+
+# IDE/project files
+.vscode/
+*.log
+
