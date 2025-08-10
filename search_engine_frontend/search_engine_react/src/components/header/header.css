@@ -30,21 +30,3 @@
   transition: opacity 0.3s ease;
   object-fit: contain;    
 }
-
-.logo.static {
-  z-index: 1;
-}
-
-.logo.animated {
-  opacity: 0;
-  pointer-events: none;
-  z-index: 2;
-}
-
-.logo.static:hover ~ .animated {
-  opacity: 1;
-}
-
-.logo.static:hover {
-  opacity: 0;
-}

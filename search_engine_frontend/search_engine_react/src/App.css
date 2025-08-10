@@ -1,6 +1,5 @@
-.theme-dark{
+.theme-dark *{
   color: white;
-  background-color: black;
 }
 .theme-light{
   color: black;

@@ -2,12 +2,12 @@ import { AnimatePresence, motion } from 'framer-motion'
 import '../header/header.css'
 import '../../App.css'
 import { useState } from 'react'
-import { Sun, Moon, MonitorCog } from 'lucide-react'
+import { Sun, Moon, MonitorCog,Cog } from 'lucide-react'
 import { useNavigate } from 'react-router-dom';
 import { useEffect } from 'react';
 
 const icons = [Sun, Moon, MonitorCog]
-function Header({ children }) {
+function Header({showTheme,showSettings}) {
   const navigate = useNavigate();
   const [index, setIndex] = useState(2)
   const IconComponent = icons[index]
@@ -39,7 +39,6 @@ function Header({ children }) {
   const isDark = currentTheme === 'theme-dark'
 
   const staticLogo = isDark ? '/Search_dark.png' : '/Search.png'
-  const animatedLogo = isDark ? '/Search_dark.gif' : '/Search.gif'
 
   useEffect(() => {
     const theme = getTheme(index)
@@ -52,21 +51,29 @@ function Header({ children }) {
       <div className='header'>
         <div className="logo-wrapper">
           <img src={staticLogo} alt="search nova static" className="logo static" onClick={() => navigate('/home')} />
-          <img src={animatedLogo} alt="search nova animated" className="logo animated" />
         </div>
-        <AnimatePresence initial={false}>
+        {showTheme &&  <AnimatePresence initial={false}>
           <motion.button
-            whileHover={{ scale: 1.5 }}
+            whileHover={{ scale: 1.2 }}
             onClick={handleClick}
             whileTap={{ scale: 0.95 }}
-            className='icon-button'
+            className='icon-button '
           >
             <IconComponent stroke="currentColor" />
           </motion.button>
+        </AnimatePresence>}
+
+        {showSettings &&
+        <AnimatePresence initial={false}>
+          <motion.button
+            whileHover={{ scale: 1.2 }}
+            whileTap={{ scale: 0.95 }}
+            className='icon-button'
+          >
+                  <Cog stroke="currentColor" />
+          </motion.button>
         </AnimatePresence>
-      </div>
-      <div className='body-content'>
-        {children}
+        }
       </div>
     </div>
   )
