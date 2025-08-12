@@ -14,7 +14,7 @@ function CustomInput({ Icon, customStyle = {} }) {
         type="text"
         placeholder="Search"
         className="inputField"
-        whileFocus={{ scale: 1.01 }}
+        whileTap={{ scale: 0.95 }}
       />
     </motion.div>
   )
