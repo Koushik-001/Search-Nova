@@ -1,0 +1,12 @@
+:root {
+  --app-color: white; /* change this to set global theme color */
+}
+
+.App {
+  color: var(--app-color);
+}
+
+.App * {
+  color: var(--app-color) !important; /* text & font-based icons */
+  stroke: var(--app-color) !important; /* SVG icons with stroke */
+}
