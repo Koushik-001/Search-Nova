@@ -1,10 +1,10 @@
 import React from 'react'
 import CustomSetting from './CustomSetting'
 
-function Header() {
+function Header({ onWallpaperChange }) {
   return (
     <div className='headerMainWrapper'>
-        <CustomSetting/>
+        <CustomSetting onWallpaperChange={onWallpaperChange}/>
     </div>
   )
 }
