@@ -16,7 +16,7 @@ def get_db():
 
 @app.get('/test')
 def test_fun():
-    return {"message": "hello world!!"}
+    return {"message": "hello world!"}
 
 @app.get("/webpages/", response_model=List[WebpageOut])
 def read_webpages(db: Session = Depends(get_db)):
